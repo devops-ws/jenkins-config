@@ -21,13 +21,15 @@ jenkins:
   clouds:
   - kubernetes:
       name: kubernetes
-      jenkinsTunnel: localhost:50000
-      jenkinsUrl: http://localhost:8080
+      credentialsId: "c6369e96-009b-44fe-9090-c65eb6030334"
+      jenkinsTunnel: jenkins.jd.surenpi.com:50000
+      jenkinsUrl: http://jenkins.jd.surenpi.com:12345
       maxRequestsPerHostStr: "32"
       namespace: default
-      serverUrl: https://kubernetes.default
+      serverUrl: https://117.48.228.41:6443
       podRetention: never
       containerCapStr: ""
+      skipTlsVerify: true
       templates:
       - name: java
         label: java
