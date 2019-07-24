@@ -1,5 +1,5 @@
 jenkins:
-  systemMessage: "推荐使用 Jenkins 的客户端工具 https://github.com/LinuxSuRen/jenkins-cli 管理\
+  systemMessage: "本环境是由 Jenkins 中文社区工作坊提供，更多活动请访问 https://jenkins-zh.cn/event/。推荐使用 Jenkins 的客户端工具 https://github.com/LinuxSuRen/jenkins-cli 管理\
     你的 Jenkins。练习时，每个人以自己的名字创建对应的文件夹，并在里面进行操作。"
   agentProtocols:
   - "JNLP4-connect"
