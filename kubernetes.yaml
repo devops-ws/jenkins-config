@@ -56,6 +56,52 @@ jenkins:
           resourceRequestMemory: 750M
           privileged: false
           ttyEnabled: true
+      - name: maven
+        label: maven-3.6 java8
+        podRetention: never
+        nodeUsageMode: NORMAL
+        instanceCapStr: "5"
+        containers:
+        - name: java
+          args: cat
+          command: /bin/sh -c
+          image: docker.io/maven:3.6-jdk-8
+          livenessProbe:
+            failureThreshold: 0
+            initialDelaySeconds: 0
+            periodSeconds: 0
+            successThreshold: 0
+            timeoutSeconds: 0
+          alwaysPullImage: false
+          resourceLimitCpu: 1
+          resourceLimitMemory: 2500M
+          resourceRequestCpu: 500m
+          resourceRequestMemory: 750M
+          privileged: false
+          ttyEnabled: true
+      - name: docker
+        label: docker
+        podRetention: never
+        nodeUsageMode: NORMAL
+        instanceCapStr: "5"
+        containers:
+        - name: java
+          args: cat
+          command: /bin/sh -c
+          image: docker.io/docker
+          livenessProbe:
+            failureThreshold: 0
+            initialDelaySeconds: 0
+            periodSeconds: 0
+            successThreshold: 0
+            timeoutSeconds: 0
+          alwaysPullImage: false
+          resourceLimitCpu: 1
+          resourceLimitMemory: 2500M
+          resourceRequestCpu: 500m
+          resourceRequestMemory: 750M
+          privileged: false
+          ttyEnabled: true
       - name: golang
         label: golang
         containers:
