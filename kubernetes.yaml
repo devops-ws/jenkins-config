@@ -57,7 +57,7 @@ jenkins:
           privileged: false
           ttyEnabled: true
       - name: maven
-        label: maven-3.6 java8
+        label: maven-3.6 java8 maven
         podRetention: never
         nodeUsageMode: NORMAL
         instanceCapStr: "5"
