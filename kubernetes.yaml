@@ -121,7 +121,7 @@ jenkins:
           resourceLimitMemory: 2500M
           resourceRequestCpu: 500m
           resourceRequestMemory: 750M
-          privileged: true
+          privileged: false
           ttyEnabled: true
       - name: docker
         label: docker
@@ -148,7 +148,7 @@ jenkins:
           resourceLimitMemory: 2500M
           resourceRequestCpu: 500m
           resourceRequestMemory: 750M
-          privileged: true
+          privileged: false
           ttyEnabled: true
       - name: helm
         label: helm
@@ -238,7 +238,7 @@ jenkins:
           resourceLimitMemory: 2500M
           resourceRequestCpu: 500m
           resourceRequestMemory: 750M
-          privileged: true
+          privileged: false
           ttyEnabled: true
         podRetention: never
         nodeUsageMode: NORMAL
