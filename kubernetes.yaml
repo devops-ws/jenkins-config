@@ -234,3 +234,29 @@ jenkins:
         workspaceVolume:
           emptyDirWorkspaceVolume:
             memory: false
+      - name: kubectl
+        label: kubectl
+        containers:
+        - name: kubectl
+          args: cat
+          command: /bin/sh -c
+          image: bitnami/kubectl
+          livenessProbe:
+            failureThreshold: 0
+            initialDelaySeconds: 0
+            periodSeconds: 0
+            successThreshold: 0
+            timeoutSeconds: 0
+          alwaysPullImage: false
+          resourceLimitCpu: 1
+          resourceLimitMemory: 1500M
+          resourceRequestCpu: 500m
+          resourceRequestMemory: 750M
+          privileged: false
+          ttyEnabled: true
+        podRetention: never
+        nodeUsageMode: NORMAL
+        instanceCapStr: "5"
+        workspaceVolume:
+          emptyDirWorkspaceVolume:
+            memory: false
