@@ -84,6 +84,10 @@ jenkins:
         podRetention: never
         nodeUsageMode: NORMAL
         instanceCapStr: "5"
+        volumes:
+          - hostPathVolume:
+              mountPath: "/var/run/docker.sock"
+              hostPath: "/var/run/docker.sock"
         containers:
         - name: maven
           args: cat
@@ -117,13 +121,17 @@ jenkins:
           resourceLimitMemory: 2500M
           resourceRequestCpu: 500m
           resourceRequestMemory: 750M
-          privileged: false
+          privileged: true
           ttyEnabled: true
       - name: docker
         label: docker
         podRetention: never
         nodeUsageMode: NORMAL
         instanceCapStr: "5"
+        volumes:
+          - hostPathVolume:
+              mountPath: "/var/run/docker.sock"
+              hostPath: "/var/run/docker.sock"
         containers:
         - name: docker
           args: cat
@@ -140,7 +148,7 @@ jenkins:
           resourceLimitMemory: 2500M
           resourceRequestCpu: 500m
           resourceRequestMemory: 750M
-          privileged: false
+          privileged: true
           ttyEnabled: true
       - name: helm
         label: helm
@@ -193,6 +201,10 @@ jenkins:
             memory: false
       - name: golang-docker
         label: golang docker
+        volumes:
+          - hostPathVolume:
+              mountPath: "/var/run/docker.sock"
+              hostPath: "/var/run/docker.sock"
         containers:
         - name: golang
           args: cat
@@ -226,7 +238,7 @@ jenkins:
           resourceLimitMemory: 2500M
           resourceRequestCpu: 500m
           resourceRequestMemory: 750M
-          privileged: false
+          privileged: true
           ttyEnabled: true
         podRetention: never
         nodeUsageMode: NORMAL
