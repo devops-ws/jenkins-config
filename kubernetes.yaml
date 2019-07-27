@@ -84,6 +84,10 @@ jenkins:
         podRetention: never
         nodeUsageMode: NORMAL
         instanceCapStr: "5"
+        volumes:
+          - hostPathVolume:
+              mountPath: "/var/run/docker.sock"
+              hostPath: "/var/run/docker.sock"
         containers:
         - name: maven
           args: cat
@@ -124,6 +128,10 @@ jenkins:
         podRetention: never
         nodeUsageMode: NORMAL
         instanceCapStr: "5"
+        volumes:
+          - hostPathVolume:
+              mountPath: "/var/run/docker.sock"
+              hostPath: "/var/run/docker.sock"
         containers:
         - name: docker
           args: cat
@@ -193,6 +201,10 @@ jenkins:
             memory: false
       - name: golang-docker
         label: golang docker
+        volumes:
+          - hostPathVolume:
+              mountPath: "/var/run/docker.sock"
+              hostPath: "/var/run/docker.sock"
         containers:
         - name: golang
           args: cat
